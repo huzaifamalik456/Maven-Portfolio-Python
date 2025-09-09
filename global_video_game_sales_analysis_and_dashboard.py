@@ -205,7 +205,7 @@ for i in list(games.loc[:, ["total_sales", "na_sales", "jp_sales", "pal_sales", 
     elif i == "other_sales":
         metric_options.append({"label": "Rest of World Sales" , "value": i})
     
-    else:
+    elif i == "total_sales":
         metric_options.append({"label": i.replace("_", " ").title(), "value": i})
                                  
 
@@ -386,7 +386,7 @@ for i in list(games.loc[:, ["total_sales", "na_sales", "jp_sales", "pal_sales", 
     elif i == "pal_sales":
         metric_options.append({"label": "European & African Sales" , "value": i})
     
-    else:
+    elif i == "total_sales":
         metric_options.append({"label": i.replace("_", " ").title(), "value": i})
     
 metric_options
