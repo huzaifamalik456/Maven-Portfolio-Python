@@ -479,7 +479,8 @@ def produce_graphs(location):
         plot_bgcolor="rgba(0,0,0,0)",   # plot area
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
-        xaxis_title=None
+        xaxis_title=None,
+        template="SUPERHERO"
     )
     
     revenue_fig.update_traces(
@@ -515,7 +516,8 @@ def produce_graphs(location):
         plot_bgcolor="rgba(0,0,0,0)",   # plot area
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
-        xaxis_title=None
+        xaxis_title=None,
+        template="SUPERHERO"
     )
     
     
@@ -545,7 +547,8 @@ def produce_graphs(location):
         plot_bgcolor="rgba(0,0,0,0)",   # plot area
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
-        xaxis_title=None
+        xaxis_title=None,
+        template="SUPERHERO"
     )
     
     
@@ -570,7 +573,8 @@ def produce_graphs(location):
         plot_bgcolor="rgba(0,0,0,0)",   # plot area
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
-        yaxis_title=None
+        yaxis_title=None,
+        template="SUPERHERO"
     )
     
     
