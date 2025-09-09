@@ -25,7 +25,7 @@ import seaborn as sns
 
 
 coffee = pd.read_excel(
-    "/Users/huzaifamalik/Downloads/Python for Data Analytics/Interactive Dashboards with Plotly & Dash/Course_Materials/Coffee Shop Sales Guided Project/Coffee Shop Sales.xlsx",
+    "Coffee Shop Sales.xlsx",
     dtype = {"transaction_id": "Int32", "transaction_qty": "Int8", "store_id": "Int8", "product_id": "Int8"}
 )
 
