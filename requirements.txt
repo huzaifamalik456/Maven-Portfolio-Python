@@ -1,7 +1,7 @@
 dash==3.2.0
-dash-bootstrap-components
-dash-bootstrap-templates
-plotly
+dash-bootstrap-components==2.0.3
+dash-bootstrap-templates==2.1.0
+plotly==6.0.1
 pandas
 numpy
 seaborn
