@@ -605,17 +605,17 @@ def produce_graphs(location):
     
 #app.run(port = 8080)
 
-import webbrowser
-from threading import Timer
+# import webbrowser
+# from threading import Timer
 
-port = 8080
-url = f"http://127.0.0.1:{port}/"
+# port = 8080
+# url = f"http://127.0.0.1:{port}/"
 
-def open_browser():
-    webbrowser.open_new(url)   # always new window
+# def open_browser():
+#     webbrowser.open_new(url)   # always new window
 
-Timer(1, open_browser).start()
-app.run(port=port, debug=True)
+# Timer(1, open_browser).start()
+# app.run(port=port, debug=True)
 
 
 
