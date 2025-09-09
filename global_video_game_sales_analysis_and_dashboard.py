@@ -10,7 +10,7 @@ import seaborn as sns
 import plotly.express as px
 from dash import Dash, html, dcc
 from dash.dependencies import Output, Input
-from jupyter_dash import JupyterDash
+#from jupyter_dash import JupyterDash
 
 
 # In[3]:
