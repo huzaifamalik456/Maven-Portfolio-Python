@@ -362,8 +362,8 @@ dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.mi
 app = Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO, dbc_css])
 server = app.server
 
-load_figure_template("SUPERHERO")
-pio.templates.default = "SUPERHERO"
+load_figure_template("superhero")
+pio.templates.default = "superhero"
 
 
 app.layout = dbc.Container(
@@ -482,7 +482,7 @@ def produce_graphs(location):
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
         xaxis_title=None,
-        template="SUPERHERO"
+        template="superhero"
     )
     
     revenue_fig.update_traces(
@@ -519,7 +519,7 @@ def produce_graphs(location):
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
         xaxis_title=None,
-        template="SUPERHERO"
+        template="superhero"
     )
     
     
@@ -550,7 +550,7 @@ def produce_graphs(location):
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
         xaxis_title=None,
-        template="SUPERHERO"
+        template="superhero"
     )
     
     
@@ -576,7 +576,7 @@ def produce_graphs(location):
         paper_bgcolor="rgba(0,0,0,0)",  # outside plot
         margin=dict(l=0, r=0, t=40, b=0),
         yaxis_title=None,
-        template="SUPERHERO"
+        template="superhero"
     )
     
     
