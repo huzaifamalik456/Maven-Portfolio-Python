@@ -212,8 +212,9 @@ for i in list(games.loc[:, ["total_sales", "na_sales", "jp_sales", "pal_sales", 
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
             
 app = Dash(__name__, external_stylesheets=[dbc.themes.CYBORG, dbc_css])
+server = app.server
 
-load_figure_template("CYBORG")
+load_figure_template("cyborg")
 
 app.layout = dbc.Container(
     [
