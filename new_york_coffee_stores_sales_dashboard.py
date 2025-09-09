@@ -343,6 +343,7 @@ from dash import Dash, html, dcc
 from dash.dependencies import Output, Input
 import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
+import plotly.io as pio
 from dash import dash_table
 
 
@@ -362,6 +363,7 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO, dbc_css])
 server = app.server
 
 load_figure_template("SUPERHERO")
+pio.templates.default = "SUPERHERO"
 
 
 app.layout = dbc.Container(
