@@ -35,7 +35,7 @@ import dash_bootstrap_components as dbc
 
 
 games = pd.read_csv(
-    "/Users/huzaifamalik/Downloads/Python for Data Analytics/Interactive Dashboards with Plotly & Dash/Course_Materials/Video+Game+Sales/vgchartz-2024.csv"
+    "vgchartz-2024.csv"
 )
 
 
@@ -212,8 +212,9 @@ for i in list(games.loc[:, ["total_sales", "na_sales", "jp_sales", "pal_sales", 
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
             
 app = Dash(__name__, external_stylesheets=[dbc.themes.CYBORG, dbc_css])
+server = app.server
 
-load_figure_template("CYBORG")
+load_figure_template("cyborg")
 
 app.layout = dbc.Container(
     [
@@ -332,293 +333,18 @@ def produce_charts(metric_selection, dropdown_selection):
                             
 #app.run(port = 8082)
 
-import webbrowser
-from threading import Timer
+# import webbrowser
+# from threading import Timer
 
-port = 8082
-url = f"http://127.0.0.1:{port}/"
+# port = 8082
+# url = f"http://127.0.0.1:{port}/"
 
-def open_browser():
-    webbrowser.open_new(url)   # always new window
+# def open_browser():
+#     webbrowser.open_new(url)   # always new window
 
-Timer(1, open_browser).start()
-app.run(port=port, debug=True)
+# Timer(1, open_browser).start()
+# app.run(port=port, debug=True)
                             
-
-
-# In[ ]:
-
-
-
-
-
-# In[21]:
-
-
-dropdown_options = []
-
-for i in list(games.loc[:, ["Title", "Genre", "Publisher", "Developer", "console"]].columns):
-    dropdown_options.append({"label": i.title(), "value": i})
-    
-dropdown_options
-
-
-# In[ ]:
-
-
-
-
-
-# In[22]:
-
-
-metric_options = []
-
-for i in list(games.loc[:, ["total_sales", "na_sales", "jp_sales", "pal_sales", "other_sales"]].columns):
-    
-    if i == "na_sales":
-        metric_options.append({"label": "North American Sales" , "value": i})
-        
-    elif i == "jp_sales":
-        metric_options.append({"label": "Japan Sales" , "value": i})
-        
-    elif i == "pal_sales":
-        metric_options.append({"label": "European & African Sales" , "value": i})
-    
-    else:
-        metric_options.append({"label": i.replace("_", " ").title(), "value": i})
-    
-metric_options
-
-
-# In[ ]:
-
-
-
-
-
-# In[23]:
-
-
-for i in metric_options:
-    print(list(i.items()))
-
-
-# In[ ]:
-
-
-
-
-
-# In[24]:
-
-
-metric_options
-
-
-# In[25]:
-
-
-metric_selection = "pal_sales"
-dropdown_selection = "Genre"
-
-for index, element in enumerate(metric_options):
-    
-    if metric_selection == metric_options[index]["value"]:
-        
-        line_chart_title = "Trendline showing " + metric_options[index]["label"] + " Over Time"
-        bar_chart_title = metric_options[index]["label"] + " by " + dropdown_selection
-        
-        break
-        
-print(line_chart_title)
-print(bar_chart_title)
-    
-
-
-# In[26]:
-
-
-metric_options[1]["value"]
-
-
-# In[27]:
-
-
-metric_options[1]["label"]
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[28]:
-
-
-games.head()
-
-
-# In[ ]:
-
-
-
-
-
-# In[29]:
-
-
-metric_selection = "na_sales"
-dropdown_selection = "Genre"
-
-agg_table_for_line_graph = games.pivot_table(
-        index = "release_year",
-        values = metric_selection,
-        aggfunc = "sum"
-    )
-    
-line_graph = px.line(
-        
-    agg_table_for_line_graph.reset_index().sort_values("release_year", ascending = True),
-    x = "release_year",
-    y = metric_selection
-)
-
-agg_table_for_bar_chart = (
-    games.groupby(dropdown_selection).agg({metric_selection: "sum"})
-    .sort_values(metric_selection, ascending = False).head(10)
-)
-
-bar_graph = px.bar(
-    agg_table_for_bar_chart,
-    x = agg_table_for_bar_chart.index,
-    y = metric_selection
-)
-
-
-# In[30]:
-
-
-line_graph.show()
-
-
-# In[ ]:
-
-
-
-
-
-# In[31]:
-
-
-bar_graph.show()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[32]:
-
 
 import warnings
 
@@ -631,28 +357,8 @@ warnings.filterwarnings(
 # In[33]:
 
 
-px.line(
-    annual_sales_table,
-    x = annual_sales_table.index,
-    y = "total_sales"
-)
 
 
-# In[ ]:
-
-
-
-
-
-# In[34]:
-
-
-px.bar(
-    top_10_titles,
-    x = top_10_titles.index,
-    y = "total_sales",
-    #color = top_10_titles.index
-)
 
 
 # In[ ]:
