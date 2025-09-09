@@ -35,7 +35,7 @@ import dash_bootstrap_components as dbc
 
 
 games = pd.read_csv(
-    "/Users/huzaifamalik/Downloads/Python for Data Analytics/Interactive Dashboards with Plotly & Dash/Course_Materials/Video+Game+Sales/vgchartz-2024.csv"
+    "vgchartz-2024.csv"
 )
 
 
@@ -333,17 +333,17 @@ def produce_charts(metric_selection, dropdown_selection):
                             
 #app.run(port = 8082)
 
-import webbrowser
-from threading import Timer
+# import webbrowser
+# from threading import Timer
 
-port = 8082
-url = f"http://127.0.0.1:{port}/"
+# port = 8082
+# url = f"http://127.0.0.1:{port}/"
 
-def open_browser():
-    webbrowser.open_new(url)   # always new window
+# def open_browser():
+#     webbrowser.open_new(url)   # always new window
 
-Timer(1, open_browser).start()
-app.run(port=port, debug=True)
+# Timer(1, open_browser).start()
+# app.run(port=port, debug=True)
                             
 
 
