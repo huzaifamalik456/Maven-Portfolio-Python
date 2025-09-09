@@ -206,7 +206,7 @@ for i in list(games.loc[:, ["total_sales", "na_sales", "jp_sales", "pal_sales", 
         metric_options.append({"label": "Rest of World Sales" , "value": i})
     
     elif i == "total_sales":
-        metric_options.append({"label": i.replace("_", " ").title(), "value": i})
+        metric_options.append({"label": "Total Sales, "value": i})
                                  
 
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
